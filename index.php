@@ -30,12 +30,57 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
         $message_to_reply = $result;
     }
 } else {
-    $message_to_reply = 'Hi there! Lets get started. Pick an option below to get going.';
+	$message = $input['entry'][0]['messaging'][0]['message']['quick_replies']['topics'];
+	if(isset($message)){
+		$jsonData = '{
+		    "recipient":{
+		        "id":"'.$sender.'"
+		    },
+		    "message":{
+		    "text":"Hi there! Lets get started. Pick an option below to get going.",
+		    "quick_replies":[
+		      {
+		        "content_type":"text",
+		        "title":"Living",
+		        "payload":"editor"
+		      },
+		      {
+		        "content_type":"text",
+		        "title":"Sports",
+		        "payload":"topic"
+		      }
+		    ]
+			  }
+			}';
+				
+	}else{
+    $jsonData = '{
+    "recipient":{
+        "id":"'.$sender.'"
+    },
+    "message":{
+    "text":"Hi there! Lets get started. Pick an option below to get going.",
+    "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Editor Pics",
+        "payload":"editor"
+      },
+      {
+        "content_type":"text",
+        "title":"Topics",
+        "payload":"topic"
+      }
+    ]
+	  }
+	}';
+	}
 }
 //API Url
 $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
 //Initiate cURL.
 $ch = curl_init($url);
+
 //The JSON data.
 $jsonData = '{
     "recipient":{
