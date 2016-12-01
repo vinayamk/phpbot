@@ -30,7 +30,7 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
         $message_to_reply = $result;
     }
 } else {
-    $message_to_reply = 'Huh! what do you mean?';
+    $message_to_reply = 'Hi there! Lets get started. Pick an option below to get going.';
 }
 //API Url
 $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token;
@@ -42,17 +42,17 @@ $jsonData = '{
         "id":"'.$sender.'"
     },
     "message":{
-    "text":"Select Menu:",
+    "text":"Hi there! Lets get started. Pick an option below to get going.",
     "quick_replies":[
       {
         "content_type":"text",
-        "title":"Red",
-        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+        "title":"Editor Pics",
+        "payload":"editor"
       },
       {
         "content_type":"text",
-        "title":"Green",
-        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+        "title":"Topics",
+        "payload":"topic"
       }
     ]
   }
