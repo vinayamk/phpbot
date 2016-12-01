@@ -78,7 +78,7 @@ $jsonData = '{
 	]
 				}
 			}
-		}
+		
   }
 }';
 //Encode the array into JSON.
