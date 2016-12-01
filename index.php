@@ -42,26 +42,20 @@ $jsonData = '{
         "id":"'.$sender.'"
     },
     "message":{
-       "attachment":{
-			      "type":"template",
-			      "payload":{
-			        "template_type":"button",
-			        "text":"What do you want to do next?",
-			        "buttons":[
-			          {
-			            "type":"web_url",
-			            "url":"https://petersapparel.parseapp.com",
-			            "title":"Show Website"
-			          },
-			          {
-			            "type":"postback",
-			            "title":"Start Chatting",
-			            "payload":"USER_DEFINED_PAYLOAD"
-			          }
-			        ]
-			      }
-			    }
-    }
+    "text":"Select Menu:",
+    "quick_replies":[
+      {
+        "content_type":"text",
+        "title":"Red",
+        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+      },
+      {
+        "content_type":"text",
+        "title":"Green",
+        "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+      }
+    ]
+  }
 }';
 //Encode the array into JSON.
 $jsonDataEncoded = $jsonData;
