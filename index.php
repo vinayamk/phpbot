@@ -67,10 +67,6 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
 			"payload": {
 				"template_type": "generic",
 				"elements": [{
-					"title": "First card",
-					"subtitle": "Element #1 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
-					"buttons": [{
 			"title": "Pasta with Monkfish & Mussels",
 			"item_url": "http://www.aol.co.uk/living/food/pasta-with-monkfish-and-mussels/121/",
 			"image_url": "http://o.aolcdn.com/os/ukmedia/aoluk/recipes/Recipe_121.jpg",
