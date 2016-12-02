@@ -71,24 +71,34 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
 					"subtitle": "Element #1 of an hscroll",
 					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
 					"buttons": [{
-						"type": "web_url",
-						"url": "https://www.messenger.com",
-						"title": "web url"
-					}, {
-						"type": "postback",
-						"title": "Postback",
-						"payload": "Payload for first element in a generic bubble",
-					}],
-				}, {
-					"title": "Second card",
-					"subtitle": "Element #2 of an hscroll",
-					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
-					"buttons": [{
-						"type": "postback",
-						"title": "Postback",
-						"payload": "Payload for second element in a generic bubble",
-					}],
-				}]
+			"title": "Pasta with Monkfish & Mussels",
+			"item_url": "http://www.aol.co.uk/living/food/pasta-with-monkfish-and-mussels/121/",
+			"image_url": "http://o.aolcdn.com/os/ukmedia/aoluk/recipes/Recipe_121.jpg",
+			"subtitle": "We ve got the this for everyone.",
+			"buttons": [{
+				"type": "web_url",
+				"url": "http://www.aol.co.uk/living/food/pasta-with-monkfish-and-mussels/121/",
+				"title": "View Website"
+			}, {
+				"type": "postback",
+				"title": "Start Chatting",
+				"payload": "need more menu"
+			}]
+		}, {
+			"title": "Pasta with Monkfish & Mussels",
+			"item_url": "http://www.aol.co.uk/living/food/pasta-with-monkfish-and-mussels/121/",
+			"image_url": "http://o.aolcdn.com/os/ukmedia/aoluk/recipes/Recipe_121.jpg",
+			"subtitle": "We ve got the this for everyone.",
+			"buttons": [{
+				"type": "web_url",
+				"url": "http://www.aol.co.uk/living/food/pasta-with-monkfish-and-mussels/121/",
+				"title": "View Website"
+			}, {
+				"type": "postback",
+				"title": "Start Chatting",
+				"payload": "need more menu"
+			}]
+		}]
 			}
 		}
 				        		
