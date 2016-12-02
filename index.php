@@ -55,14 +55,14 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
 			}';
 				
 	}else{
-		$message = $input['entry'][0]['messaging'][0]['message'];
+	
     $jsonData = '{
-    "data":"mm",		
+   		
     "recipient":{
         "id":"'.$sender.'"
     },
     "message":{
-    "text":"Hi there! Lets get started. Pick an option below to get going."'.$message.'dd",
+    "text":"Hi there! Lets get started. Pick an option below to get going."'.$message.'"dd",
     "quick_replies":[
       {
         "content_type":"text",
