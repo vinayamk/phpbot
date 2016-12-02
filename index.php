@@ -32,7 +32,7 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
 } else {
 	echo $input['entry'][0]['messaging'][0]['message']['quick_replies'][0]['payload'];
 	$message = $input['entry'][0]['messaging'][0]['message']['quick_replies'][0]['payload'];
-	if(isset($message)){
+	if(!(isset($message))){
 		$jsonData = '{
 		    "recipient":{
 		        "id":"'.$sender.'"
