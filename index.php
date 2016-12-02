@@ -64,7 +64,7 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
     "quick_replies":[
       {
         "content_type":"text",
-        "title":"Editor Pics",
+        "title":"Editor Pics1",
         "payload":"editor"
       },
       {
