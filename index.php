@@ -30,6 +30,7 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
         $message_to_reply = $result;
     }
 } else {
+	echo $input['entry'][0]['messaging'][0]['message']['quick_replies'][0]['payload'];
 	$message = $input['entry'][0]['messaging'][0]['message']['quick_replies'][0]['payload'];
 	if(isset($message)){
 		$jsonData = '{
@@ -42,7 +43,7 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
 		      {
 		        "content_type":"text",
 		        "title":"Living",
-		        "payload":"editor"
+		        "payload":"editor" 
 		      },
 		      {
 		        "content_type":"text",
