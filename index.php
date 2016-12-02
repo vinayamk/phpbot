@@ -33,26 +33,68 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
 	
 	$message = $input['entry'][0]['messaging'][0]['message']['quick_reply']['payload'];
 	if(isset($message)){
-		$jsonData = '{
-		    "recipient":{
-		        "id":"'.$sender.'"
-		    },
-		    "message":{
-		    "text":"Hi there! Lets get started. Pick an option below to get going.",
-		    "quick_replies":[
-		      {
-		        "content_type":"text",
-		        "title":"Living",
-		        "payload":"editor" 
-		      },
-		      {
-		        "content_type":"text",
-		        "title":"Sports",
-		        "payload":"topic"
-		      }
-		    ]
-			  }
-			}';
+		
+		if($message=='topic'){
+			$jsonData = '{
+			    "recipient":{
+			        "id":"'.$sender.'"
+			    },
+			    "message":{
+			    "text":"Hi there! Lets get started. Pick an option below to get going.",
+			    "quick_replies":[
+			      {
+			        "content_type":"text",
+			        "title":"Living",
+			        "payload":"living" 
+			      },
+			      {
+			        "content_type":"text",
+			        "title":"Sports",
+			        "payload":"living"
+			      }
+			    ]
+				  }
+				}';
+		}else{
+			
+			$jsonData = '{
+				    "recipient":{
+				        "id":"'.$sender.'"
+				    },
+				    "message":{
+"attachment": {
+			"type": "template",
+			"payload": {
+				"template_type": "generic",
+				"elements": [{
+					"title": "First card",
+					"subtitle": "Element #1 of an hscroll",
+					"image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+					"buttons": [{
+						"type": "web_url",
+						"url": "https://www.messenger.com",
+						"title": "web url"
+					}, {
+						"type": "postback",
+						"title": "Postback",
+						"payload": "Payload for first element in a generic bubble",
+					}],
+				}, {
+					"title": "Second card",
+					"subtitle": "Element #2 of an hscroll",
+					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+					"buttons": [{
+						"type": "postback",
+						"title": "Postback",
+						"payload": "Payload for second element in a generic bubble",
+					}],
+				}]
+			}
+		}
+				        		
+				  }
+				}';
+		}
 				
 	}else{
 	
@@ -67,7 +109,7 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
       {
         "content_type":"text",
         "title":"Editor Pics1",
-        "payload":"editor"
+        "payload":"topic"
       },
       {
         "content_type":"text",
