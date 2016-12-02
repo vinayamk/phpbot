@@ -60,7 +60,7 @@ if(preg_match('[time|current time|now]', strtolower($message))) {
         "id":"'.$sender.'"
     },
     "message":{
-    "text":"Hi there! Lets get started. Pick an option below to get going."'.$message.',
+    "text":"Hi there! Lets get started. Pick an option below to get going."'.$message.'dd",
     "quick_replies":[
       {
         "content_type":"text",
